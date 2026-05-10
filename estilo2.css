@@ -1,0 +1,32 @@
+/* Estilização do Botão */
+.botao-menu {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+}
+/* ESTADO INICIAL: O menu está escondido e não ocupa espaço */
+.lista-links {
+    display: none; 
+    flex-direction: column;
+    width: 200px;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+}
+.lista-links a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+/* INTERAÇÃO: Quando passamos o mouse no container, o menu aparece */
+.menu-container:hover .lista-links {
+    /* O menu passa a existir e empurra o que estiver abaixo */
+    display: block; 
+}
+.lista-links a:hover {
+    background-color: #3498db;
+    color: white;
+}

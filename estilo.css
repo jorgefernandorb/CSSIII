@@ -69,3 +69,20 @@
   top: 110px; left: 110px;
   z-index: 1; /* Ficará atrás de todos */
 }
+
+.exemplo {
+  background-color: #3498db;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #2c3e50;
+}
+.bloco { display: block; }
+.em-linha { display: inline; }
+.hibrido {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+}
+.invisivel { display: none; }
+

@@ -1,0 +1,101 @@
+/* Container precisa ser relative para o menu absoluto se alinhar a ele */
+.menu-container {
+    position: relative;
+    width: 200px;
+    font-family: sans-serif;
+}
+.botao-menu {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+/* O MENU: Com posicionamento absoluto para sobrepor o texto */
+.lista-links {
+    display: none; 
+    position: absolute; /* Faz a lista flutuar sobre o conteúdo */
+    top: 100%;          /* Coloca logo abaixo do botão */
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #bdc3c7;
+    /* Sombra para dar profundidade */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2); 
+    z-index: 10;        /* Garante que fique na frente de tudo */
+}
+
+
+/* Elementos alinhados verticalmente (comportamento de bloco) */
+.lista-links a {
+    display: block;    /* Garante um item abaixo do outro */
+    text-decoration: none;
+    color: #333;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+/* Mostrar ao passar o mouse */
+.menu-container:hover .lista-links {
+    display: block;
+}
+.lista-links a:hover {
+    background-color: #3498db;
+    color: white;
+}
+/*Flexbox*/
+.container {
+  display: flex;          /* Ativa o Flexbox */
+  flex-direction: row;    /* Itens em linha */
+  flex-wrap: wrap;       /* Se não couber, quebra a linha */
+  justify-content: space-around; /* Distribui o espaço entre eles */
+  align-items: center;    /* Centraliza na vertical */
+  background-color: #f0f0f0;
+  height: 400px;
+}
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  color: white;
+  margin: 10px;
+  display: flex;          /* Flexbox também dentro do card para centralizar texto */
+  justify-content: center;
+  align-items: center;
+}
+.item-especial {
+  align-self: flex-start; /* Este card específico vai para o topo */
+  background-color: #e74c3c;
+  order: -1;              /* Este card será o primeiro da lista */
+}
+/* 1. Criando o roteiro da animação */
+@keyframes pulsar {
+  0% {
+    transform: scale(1);
+    background-color: #3498db;
+  }
+  50% {
+    /* Aumenta 20% */
+    transform: scale(1.2); 
+    /* Muda para vermelho */
+    background-color: #e74c3c; 
+  }
+  100% {
+    transform: scale(1);
+    background-color: #3498db;
+  }
+}
+/* 2. Aplicando a animação ao elemento */
+.caixa-viva {
+  width: 100px;
+  height: 100px;
+  margin: 50px auto;
+  border-radius: 10px;
+  /* Configurações */
+  animation-name: pulsar;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  /* Faz rodar para sempre */
+  animation-iteration-count: infinite; 
+}
